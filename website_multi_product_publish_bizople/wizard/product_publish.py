@@ -6,6 +6,7 @@ from odoo import models, fields, api
 
 class ProductPublishedUnPublishedWizard(models.TransientModel):
     _name = "product.published.unpublished.wizard"
+    _description = "Publish/Unpublish Multiple Product On Website"
 
     website_published = fields.Selection([
         ("publish", "Publish"), ("unpublish", "Unpublish")], "Website Publish",
@@ -35,7 +36,6 @@ class ProductPublishedUnPublishedWizard(models.TransientModel):
         res['line_ids'] = line_ids
         return res
 
-    @api.multi
     def get_product_publish_unpublish(self):
         self.ensure_one()
         publish = True
@@ -48,6 +48,7 @@ class ProductPublishedUnPublishedWizard(models.TransientModel):
 
 class ProductPublishedLines(models.TransientModel):
     _name = "product.published.lines"
+    _description = "Display Multiple Product Lines In Wizard"
 
     wizard_id = fields.Many2one(
         'product.published.unpublished.wizard', "Wizard")
