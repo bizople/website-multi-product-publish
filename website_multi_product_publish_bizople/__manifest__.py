@@ -5,7 +5,7 @@
 {
     'name': 'Multi Product Publish/Unpublish',
     'category': 'Website',
-    'version': '14.0.1.0.0',
+    'version': '15.0.0.0',
     'author': 'Bizople Solutions Pvt. Ltd.',
     'website': 'https://www.bizople.com',
     'summary': 'Multi Product Publish and Unpublish',
@@ -16,13 +16,15 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        
         'wizard/product_publish_view.xml',
     ],
-    'images': [
+     'images': [
         'static/description/banner.png'
     ],
+    'sequence': 1,
     'installable': True,
     'auto_install': False,
-    'application': False,
+    'application': True,
     'license': 'AGPL-3',
 }

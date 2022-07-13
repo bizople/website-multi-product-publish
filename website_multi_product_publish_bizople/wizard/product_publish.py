@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo Module Developed by Bizople Solutions Pvt. Ltd.
 # See LICENSE file for full copyright and licensing details.
-from odoo import models, fields, api
 
+from odoo import models, fields, api
 
 class ProductPublishedUnPublishedWizard(models.TransientModel):
     _name = "product.published.unpublished.wizard"
-    _description = "Publish/Unpublish Multiple Product On Website"
+    _description = "Product Publish Unpublish Wizard"
 
     website_published = fields.Selection([
         ("publish", "Publish"), ("unpublish", "Unpublish")], "Website Publish",
@@ -48,7 +48,7 @@ class ProductPublishedUnPublishedWizard(models.TransientModel):
 
 class ProductPublishedLines(models.TransientModel):
     _name = "product.published.lines"
-    _description = "Display Multiple Product Lines In Wizard"
+    _description = "Product Published Lines"
 
     wizard_id = fields.Many2one(
         'product.published.unpublished.wizard', "Wizard")
